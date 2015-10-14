@@ -72,6 +72,18 @@ gulp.task('javascript', function() {
 gulp.task('move-html', function() {
   gulp.src('src/*.html')
   .pipe(gulp.dest('dist'))
+  .pipe(notify({ message: 'Move HTML task complete' }));
+});
+
+gulp.task('move-svg', function() {
+  gulp.src('src/svg/**/*')
+  .pipe(gulp.dest('dist/svg'))
+  .pipe(notify({ message: 'Move task complete' }));
+});
+
+gulp.task('move-fonts', function() {
+  gulp.src('src/fonts/**/*')
+  .pipe(gulp.dest('dist/fonts'))
   .pipe(notify({ message: 'Move task complete' }));
 });
 
@@ -83,12 +95,12 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function(cb) {
-    del(['dist/css', 'dist/js', 'dist/img, dist/*.html'], cb)
+    del(['dist/css', 'dist/js', 'dist/img, dist/*.html', 'dist/svg', 'dist/fonts'], cb)
 });
 
 //Main gulp tast that runs each indvidual task.
 gulp.task('default',['clean'], function() {
-    gulp.start('styles', 'javascript', 'images', 'move-html');
+    gulp.start('styles', 'javascript', 'images', 'move-html', 'move-svg', 'move-fonts');
 });
 
 gulp.task('watch', function() {
@@ -104,6 +116,10 @@ gulp.task('watch', function() {
 
   // Watch html files
   gulp.watch('src/**/*.html', ['move-html']);
+
+  // Watch for new svg or fonts
+  gulp.watch('src/svg/**/*', ['move-svg']);
+  gulp.watch('src/fonts/**/*', ['move-fonts']);
 
   livereload.listen();
 
