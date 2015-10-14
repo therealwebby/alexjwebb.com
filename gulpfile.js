@@ -38,13 +38,13 @@ gulp.task('styles', function() {
     //Set auto prefixer to look back 2 versions
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     //Save this file to the css director
-    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(gulp.dest('dist/css'))
     //Append min to file name
     .pipe(rename({suffix: '.min'}))
     //Minify the file
     .pipe(minifycss())
     //Save the minified file
-    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(gulp.dest('dist/css'))
     //Notification of completed task
     .pipe(notify({ message: 'Sass task complete' }));
 });
@@ -58,31 +58,37 @@ gulp.task('javascript', function() {
     //Concentrates javascript files into app.js
     .pipe(concat('app.js'))
     //Saves concat file
-    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(gulp.dest('dist/js'))
     //Appeds .min to name of files
     .pipe(rename({suffix: '.min'}))
     //Minifys the file
     .pipe(uglify())
     //Saves file into dist file directory
-    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(gulp.dest('dist/js'))
     //Notification of completed task
     .pipe(notify({ message: 'Javascript task complete' }));
+});
+
+gulp.task('move-html', function() {
+  gulp.src('src/*.html')
+  .pipe(gulp.dest('dist'))
+  .pipe(notify({ message: 'Move task complete' }));
 });
 
 gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/assets/img'))
+    .pipe(gulp.dest('dist/img'))
     .pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('clean', function(cb) {
-    del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
+    del(['dist/css', 'dist/js', 'dist/img, dist/*.html'], cb)
 });
 
 //Main gulp tast that runs each indvidual task.
 gulp.task('default',['clean'], function() {
-    gulp.start('styles', 'javascript', 'images');
+    gulp.start('styles', 'javascript', 'images', 'move-html');
 });
 
 gulp.task('watch', function() {
@@ -95,6 +101,9 @@ gulp.task('watch', function() {
 
   // Watch image files
   gulp.watch('src/images/**/*', ['images']);
+
+  // Watch html files
+  gulp.watch('src/**/*.html', ['move-html']);
 
   livereload.listen();
 

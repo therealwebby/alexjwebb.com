@@ -1,3 +1,9 @@
+/*--------------------------------------------------------------
+  main.css
+  Author: Alex Webb
+  URI: Alexjwebb.com
+--------------------------------------------------------------*/
+
 //--------------------------------------------------------------
 // Sass file structure based loosely on Sassaparilla
 // http://sass.fffunction.co/
@@ -8,12 +14,19 @@
 @import "modules/mixins";
 @import "modules/placeholders";
 
-
 @import "partials/globals/reset";
 @import "partials/globals/clearfix";
-
-@import "partials/globals/forms";
 
 /*--------------------------------------------------------------
 Vendor Stylesheets
 --------------------------------------------------------------*/
+
+// Heavily cut back version of bootstrap. Grid only
+@import "vendor/bootstrap-sass/_bootstrap.scss";
+
+//Elements
+@import "partials/globals/forms";
+@import "partials/globals/typography";
+
+//Global Sections
+@import "partials/globals/header";
