@@ -1,0 +1,8 @@
+@mixin loradef($FontType:"regular") {
+  src:  url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.eot');
+  src:  url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.eot') format('embedded-opentype'),
+        url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.woff2') format('woff2'),
+        url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.woff') format('woff'),
+        url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.ttf') format('truetype'),
+        url('../fonts/lora/#{$FontType}/lora-#{$FontType}-webfont.svg##{$FontType}') format('svg');
+}
