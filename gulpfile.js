@@ -82,7 +82,7 @@ gulp.task('move-svg', function() {
 });
 
 gulp.task('move-fonts', function() {
-  gulp.src('src/fonts/**/*')
+  gulp.src('src/fonts/**/*.{ttf,woff,woff2,eot,svg}')
   .pipe(gulp.dest('dist/fonts'))
   .pipe(notify({ message: 'Move task complete' }));
 });

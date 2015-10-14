@@ -24,9 +24,16 @@ Vendor Stylesheets
 // Heavily cut back version of bootstrap. Grid only
 @import "vendor/bootstrap-sass/_bootstrap.scss";
 
+//Fonts
+@import "fonts/open-sans/open-sans";
+
 //Elements
-@import "partials/globals/forms";
 @import "partials/globals/typography";
+@import "partials/globals/elements";
+@import "partials/globals/forms";
 
 //Global Sections
 @import "partials/globals/header";
+
+//Pages
+@import "partials/pages/homepage";

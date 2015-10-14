@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+Homepage
+--------------------------------------------------------------*/
+
+#homepage {
+  .logo {
+    width: 35%;
+  }
+  .skill-pil {
+    display: inline-block;
+    padding: 4px 15px;
+    margin-right: 0.1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+    background-color: $light-grey;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+  }
+}

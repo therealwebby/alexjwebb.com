@@ -11,14 +11,17 @@ $c-vp								: 980px;	// full width
 // -----------------------------------------------------------
 
 $dark-grey: #333;
-$off-white: #f0f0f0;
+$light-grey: #e0e0e0;
 
 $text-colour-dark: $dark-grey;
-$text-colour-light: $off-white;
+$text-colour-light: $light-grey;
 
 // ------------------------------------------------------------
 // Typography
 // -----------------------------------------------------------
 
-$heading-font : 'Noto Sans', georgia, Helvetica, Arial, sans-serif;
-$body-font : 'Noto Sans', sans-serif;
+$serif : serif;
+$sans-serif : 'Open Sans', sans-serif;
+
+$heading-font : $sans-serif;
+$body-font : $serif;
