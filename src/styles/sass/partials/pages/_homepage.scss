@@ -3,17 +3,46 @@ Homepage
 --------------------------------------------------------------*/
 
 #homepage {
-  .logo {
-    width: 35%;
-  }
-  .skill-pil {
-    display: inline-block;
-    padding: 4px 15px;
-    margin-right: 0.1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 3px;
-    background-color: $light-grey;
-    font-family: $sans-serif;
-    text-transform: uppercase;
+  height: 100%;
+
+  main {
+    .row,
+    .container {
+      height: 100%;
+    }
+
+    .bio-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 300px;
+
+      img.logo {
+        width: 35%;
+        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        margin-bottom: 0.75rem
+      }
+
+      .skill-pil {
+        display: block;
+        float: left;
+        padding: 4px 15px;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 3px;
+        background-color: $light-grey;
+        text-transform: uppercase;
+      }
+
+      .skill-pil:nth-child(4n) {
+        clear: both;
+      }
+
+    }
   }
 }

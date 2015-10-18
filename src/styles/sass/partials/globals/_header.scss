@@ -4,6 +4,12 @@ Header
 
 header {
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+
   .menu-container {
     text-align: left;
   }
@@ -11,6 +17,11 @@ header {
   .get-in-touch-container {
     text-transform: uppercase;
     text-align: right;
+
+    h3 {
+      font-size: 16px;
+      font-size: 1rem;
+    }
   }
 
 }
