@@ -1,0 +1,8 @@
+@mixin bitterdef($FontType:"regular") {
+  src:  url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.eot');
+  src:  url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.eot') format('embedded-opentype'),
+        url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.woff2') format('woff2'),
+        url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.woff') format('woff'),
+        url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.ttf') format('truetype'),
+        url('../fonts/bitter/#{$FontType}/bitter-#{$FontType}-webfont.svg##{$FontType}') format('svg');
+}
